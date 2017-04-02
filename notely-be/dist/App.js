@@ -1,7 +1,8 @@
 "use strict";
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const logger = require("morgan");
+const bodyParser = require("body-parser");
 // Creates and configures an ExpressJS web server.
 class App {
     //Run configuration methods on the Express instance.
@@ -31,5 +32,4 @@ class App {
         this.express.use('/', router);
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = new App().express;
