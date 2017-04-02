@@ -1,4 +1,4 @@
-import * as mongo from 'mongodb'
+import * as mongo from '@types/mongodb'
 
 // Retrieve
 const MongoClient = mongo.MongoClient;
@@ -18,7 +18,7 @@ const mongoUri = (params: MongoParams) => {
 
 export let database;
 
-export const connect = (callback) => {
+export const connect = (callback?) => {
 
   // Connect to the db
   MongoClient.connect(mongoUri(params), function(err, db) {

@@ -1,9 +1,8 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
-import {Note} from "../../../models/notes.model";
 import {connect} from "./connect";
-
+import {Note} from "notely-models"
 
 chai.use(chaiHttp);
 const expect = chai.expect;

@@ -1,0 +1,11 @@
+{
+  "name": "notely-models",
+  "version": "0.0.2",
+  "description": "Models of the Notely-App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Niederberger <bersling@gmail.com>",
+  "license": "MIT"
+}
