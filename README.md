@@ -18,7 +18,7 @@ they are also installed separately.
 
 To install & run the backend, first you need a running mongodb.
 You can get one for example at mlabs.com.
-Then, add a folder `local.properties.json` to the backend with the following content:
+Then, add a folder `local.properties.json` and a `test.properties.json` to the backend with the following content:
 
 ```
 {
