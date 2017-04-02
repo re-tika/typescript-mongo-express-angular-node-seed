@@ -2,12 +2,12 @@ import * as http from 'http';
 import * as debug from 'debug';
 
 import App from './App';
-import {connect} from "./db/connect";
+import {connectToDatabase} from "./db/connect";
 
 debug('ts-express:server');
 
 //connect to mongodb
-connect('local');
+connectToDatabase('local');
 
 
 const port = normalizePort(process.env.PORT || 3000);

@@ -42,6 +42,12 @@ export class HeroRouter {
     }
   }
 
+  //TODO: finish & test
+  public insert(req: Request, res: Response, next: NextFunction) {
+    const query = req.params;
+    //TODO: do stuff...
+  }
+
 
 
   /**

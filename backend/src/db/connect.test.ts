@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
-import {connect} from "./connect";
+import {connectToDatabase} from "./connect";
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -23,7 +23,7 @@ describe('DB Layer', () => {
       });
     };
 
-    connect('local', cb);
+    connectToDatabase('local', cb);
 
   });
 
