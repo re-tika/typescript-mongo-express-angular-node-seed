@@ -1,0 +1,29 @@
+{
+  "name": "notely",
+  "version": "1.0.0",
+  "description": "A note-taking app with OCR",
+  "main": "index.js",
+  "dependencies": {
+    "ts-node": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "cd notely-be && npm install && cd ../notely-fe && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bersling/notely.git"
+  },
+  "keywords": [
+    "OCR",
+    "notes",
+    "notely"
+  ],
+  "author": "Daniel Niederberger <bersling@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bersling/notely/issues"
+  },
+  "homepage": "https://github.com/bersling/notely#readme"
+}
