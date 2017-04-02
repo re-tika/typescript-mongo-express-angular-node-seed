@@ -19,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/notely-be/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -52,8 +52,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notely-be/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="76">
+              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -75,10 +75,10 @@
         <option value="$PROJECT_DIR$/notely-be/tsconfig.json" />
         <option value="$PROJECT_DIR$/notely-be/src/connect.ts" />
         <option value="$PROJECT_DIR$/notely-be/src/server.ts" />
-        <option value="$PROJECT_DIR$/notely-be/package.json" />
         <option value="$PROJECT_DIR$/notely-be/gulpfile.js" />
         <option value="$PROJECT_DIR$/notely-be/src/index.ts" />
         <option value="$PROJECT_DIR$/notely-be/src/App.ts" />
+        <option value="$PROJECT_DIR$/notely-be/package.json" />
       </list>
     </option>
   </component>
@@ -95,7 +95,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/notely-be/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
@@ -695,7 +694,7 @@
     <entry file="file://$PROJECT_DIR$/notely-be/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -704,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notely-be/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="76">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>
