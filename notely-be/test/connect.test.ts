@@ -2,7 +2,7 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
-import {connect, database} from "../src/db/connect";
+import {connect} from "../src/db/connect";
 import {Note} from "../models/notes.model";
 
 chai.use(chaiHttp);
@@ -14,15 +14,19 @@ describe('DB Layer', () => {
     text: 'Hello World'
   };
 
-  it('should be able to connect', () => {
-    connect();
-    setTimeout(() => {
-      expect(database !== undefined).to.be.true;
-      database.collection('notes').insertOne(note, function(err, result) {
+  it("should be able to connect", function(done) {
+
+    const cb = (db) => {
+      expect(db !== undefined).to.be.true;
+      db.collection('notes').insertOne(note, function(err, result) {
         expect(err).to.equal(null);
-        expect(result).to.equal(1);
+        expect(result.insertedCount).to.equal(1);
+        done();
       });
-    }, 1000);
+    };
+
+    connect(cb);
+
   });
 
 });
