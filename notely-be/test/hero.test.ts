@@ -38,4 +38,11 @@ describe('GET api/v1/heroes', () => {
         });
   });
 
+  it('should return Luke Cage', () => {
+    return chai.request(app).get('/api/v1/heroes/1')
+        .then(res => {
+          expect(res.body.hero.name).to.equal('Luke Cage');
+        });
+  });
+
 });
