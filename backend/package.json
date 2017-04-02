@@ -13,8 +13,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongodb": "^2.2.25",
-    "morgan": "^1.7.0",
-    "notely-models": "0.0.x"
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",

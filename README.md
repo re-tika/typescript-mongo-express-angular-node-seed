@@ -1,3 +1,10 @@
+# TODO before final boilerplate / seed is ready
+
+- DAO Layer (?)
+- Permissions (?)
+- one-command install (?)
+- hero -> something generic (?)
+
 # Installation
 
 First, get the code using
@@ -9,7 +16,23 @@ git clone https://github.com/bersling/notely.git
 Then, since backend and frontend are separate projects,
 they are also installed separately.
 
-To install & run the backend, run
+To install & run the backend, first you need a running mongodb.
+You can get one for example at mlabs.com.
+Then, add a folder `local.properties.json` to the backend with the following content:
+
+```
+{
+  "db": {
+    "host": "<ds145220.mlab.com or similar>",
+    "dbuser": "<your chosen username>",
+    "port": <45220 or similar>,
+    "dbpassword": "<your chosen password>",
+    "dbname": "<your chosen dbname>"
+  }
+}
+```
+
+Then you're ready to run
 ```
 cd notely-be && npm install
 npm start
@@ -62,6 +85,10 @@ in the backend- and frontend-projects, in order for them to be truly
 independent of the root project.
 
 
+# Testing
 
+The tests can be run with `npm test`.
+They are located in the same folders as the actual code lives!
+This makes the components more self-contained.
 
 

@@ -1,5 +1,5 @@
 import * as mongo from 'mongodb'
-import {AppProperties} from "notely-models/app-properties.model";
+import {AppProperties} from "models/app-properties.model";
 
 // Retrieve
 const MongoClient = mongo.MongoClient;
