@@ -1,6 +1,6 @@
 # TODO before final boilerplate / seed is ready
 
-- DAO Layer (?)
+- DAO Layer
 - Permissions (?)
 - one-command install (?)
 - hero -> something generic (?)
