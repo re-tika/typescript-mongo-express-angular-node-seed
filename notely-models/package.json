@@ -1,6 +1,6 @@
 {
   "name": "notely-models",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Models of the Notely-App",
   "main": "index.js",
   "scripts": {

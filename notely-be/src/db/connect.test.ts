@@ -24,7 +24,7 @@ describe('DB Layer', () => {
       });
     };
 
-    connect(cb);
+    connect('local', cb);
 
   });
 

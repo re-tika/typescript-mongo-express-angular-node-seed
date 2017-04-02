@@ -1,27 +1,24 @@
-import * as mongo from '@types/mongodb'
+import * as mongo from 'mongodb'
+import {AppProperties} from "notely-models/app-properties.model";
 
 // Retrieve
 const MongoClient = mongo.MongoClient;
 
-const params: MongoParams = {
-  host: 'ds145220.mlab.com',
-  dbuser: 'notely',
-  port: 45220,
-  dbpassword: 'jlkajoijjjaksjkfiiq82',
-  dbname: 'notely-local'
-};
 
 //pre: only accepts passwords without 'weird (semicolon?)' characters...
-const mongoUri = (params: MongoParams) => {
+const mongoUri = (appParams: AppProperties) => {
+  const params = appParams.db;
   return `mongodb://${params.dbuser}:${params.dbpassword}@${params.host}:${params.port}/${params.dbname}`
 };
 
 export let database;
 
-export const connect = (callback?) => {
+export const connect = (propertiesName: string, callback?) => {
+
+  const props: AppProperties = require(`../../properties/${propertiesName}.properties.json`);
 
   // Connect to the db
-  MongoClient.connect(mongoUri(params), function(err, db) {
+  MongoClient.connect(mongoUri(props), function(err, db) {
     if(!err) {
       database = db;
       callback(db);
@@ -31,14 +28,6 @@ export const connect = (callback?) => {
   });
 
 };
-
-interface MongoParams {
-  host: string;
-  dbname: string;
-  port: number;
-  dbuser: string;
-  dbpassword: string;
-}
 
 /*
 import {Note} from "../../models/notes.model";

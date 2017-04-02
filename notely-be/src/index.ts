@@ -7,7 +7,7 @@ import {connect} from "./db/connect";
 debug('ts-express:server');
 
 //connect to mongodb
-connect();
+connect('local');
 
 
 const port = normalizePort(process.env.PORT || 3000);
