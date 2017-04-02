@@ -16,12 +16,14 @@ const mongoUri = (params: MongoParams) => {
   return `mongodb://${params.dbuser}:${params.dbpassword}@${params.host}:${params.port}/${params.dbname}`
 };
 
+export let database;
 
 export const connect = (callback) => {
 
   // Connect to the db
   MongoClient.connect(mongoUri(params), function(err, db) {
     if(!err) {
+      database = db;
       callback(db);
     } else {
       console.log('Error on connecting to MongoDB', err)
