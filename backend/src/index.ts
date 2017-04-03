@@ -15,6 +15,8 @@ export const database = new Connect();
 database.connectToDatabase();
 
 const port = normalizePort(process.env.PORT || 3000);
+
+
 router.set('port', port);
 
 const server = http.createServer(router);

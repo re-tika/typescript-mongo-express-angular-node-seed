@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
-const Heroes = require('../../data');
+import {crudRead} from "../../db/crud";
 
 export class SimpleCrudRouter {
   router: Router;
@@ -16,7 +16,7 @@ export class SimpleCrudRouter {
    * GET all Heroes.
    */
   public getAll(req: Request, res: Response, next: NextFunction) {
-    res.send(Heroes);
+    // not implemented
   }
 
   /**
@@ -26,22 +26,22 @@ export class SimpleCrudRouter {
     const resourceId = req.params.id;
     const resourceName = req.params.col;
 
-    let hero = Heroes.find(hero => hero.id === resourceId);
-    if (hero) {
-      res.status(200)
-          .send({
-            message: 'Success',
-            status: res.status,
-            hero
-          });
-    }
-    else {
-      res.status(404)
-          .send({
-            message: 'No hero found with the given id.',
-            status: res.status
-          });
-    }
+    crudRead(resourceId, resourceName, (err, data) => {
+      if (err) {
+        res.status(500).send({
+          message: "Server error",
+          status: res.status
+        })
+      } else {
+        res.status(200)
+            .send({
+              message: 'Success',
+              status: res.status,
+              data
+            })
+      }
+    });
+
   }
 
   //TODO: finish & test
@@ -67,4 +67,4 @@ export class SimpleCrudRouter {
 const intialRouter = new SimpleCrudRouter();
 intialRouter.init();
 
-export const simpleCrudRouter =  intialRouter.router;
+export const simpleCrudRouter = intialRouter.router;
