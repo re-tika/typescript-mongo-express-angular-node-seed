@@ -23,3 +23,14 @@ export function crudCreate(item: Object, collectionName: string, cb:(err, item?)
   })
 
 }
+
+export function crudUpdate(item, collectionName: string, cb:(err, item?) => void) {
+  database.collection(collectionName, (err, collection) => {
+    if (err) return cb(err);
+
+    collection.updateOne({"_id": new mongo.ObjectID(item._id)}, item, (err, item) => {
+      if (err) return cb(err);
+      return cb(null, item);
+    })
+  })
+}

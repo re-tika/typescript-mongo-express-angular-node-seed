@@ -2,7 +2,7 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import {connectToDatabase} from "./connect";
-import {crudRead, crudCreate} from "./crud";
+import {crudRead, crudCreate, crudUpdate} from "./crud";
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -13,29 +13,68 @@ describe('CRUD', () => {
 
     const item = {text: 'hello'};
 
-    //INSERT
-    const doInsert = (db) => {
+    const start = () => {
+      doCreate();
+    };
 
+    const doReadOne = (id: string) => {
+      crudRead(id, 'items', (err, item) => {
+
+        expect(err).to.equal(null);
+        expect(item.text).to.equal("hello");
+        expect(item._id).to.exist;
+
+        doUpdate(item);
+
+      });
+    };
+
+    const doReadTwo = (id: string) => {
+      crudRead(id, 'items', (err, item) => {
+
+        expect(err).to.equal(null);
+        expect(item.text).to.equal("hello world!");
+
+        doDelete(item._id);
+
+
+
+      });
+    };
+
+    const doDelete = (id: string) => {
+      //crudDelete()
+
+      //TODO: Crud delete!
+      done();
+    };
+
+
+    const doCreate = () => {
       crudCreate(item, 'items', (err, result) => {
         expect(err).to.equal(null);
         expect(result.insertedCount).to.equal(1);
 
         const insertedId = result.insertedId;
 
-        crudRead(insertedId, 'items', (err, item) => {
-
-          expect(err).to.equal(null);
-          expect(item.text).to.equal("hello");
-          done();
-
-        });
-
+        doReadOne(insertedId);
 
       })
-
     };
 
-    connectToDatabase('local', doInsert);
+
+    const doUpdate = (item) => {
+      item.text = item.text + " world!";
+      crudUpdate(item, 'items', (err, result) => {
+        expect(err).to.equal(null);
+        expect(result.modifiedCount).to.equal(1);
+
+        doReadTwo(item._id);
+
+      })
+    };
+
+    connectToDatabase('local', start);
 
   });
 
