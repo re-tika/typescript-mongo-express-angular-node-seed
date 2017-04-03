@@ -1,8 +1,8 @@
 import {Router, Request, Response, NextFunction} from 'express';
-const Heroes = require('../data');
+const Heroes = require('../../data');
 
-export class HeroRouter {
-  router: Router
+export class SimpleCrudRouter {
+  router: Router;
 
   /**
    * Initialize the HeroRouter
@@ -23,8 +23,10 @@ export class HeroRouter {
    * GET one hero by id
    */
   public getOne(req: Request, res: Response, next: NextFunction) {
-    let query = parseInt(req.params.id);
-    let hero = Heroes.find(hero => hero.id === query);
+    const resourceId = req.params.id;
+    const resourceName = req.params.col;
+
+    let hero = Heroes.find(hero => hero.id === resourceId);
     if (hero) {
       res.status(200)
           .send({
@@ -62,7 +64,7 @@ export class HeroRouter {
 }
 
 // Create the HeroRouter, and export its configured Express.Router
-const heroRoutes = new HeroRouter();
-heroRoutes.init();
+const intialRouter = new SimpleCrudRouter();
+intialRouter.init();
 
-export default heroRoutes.router;
+export const simpleCrudRouter =  intialRouter.router;

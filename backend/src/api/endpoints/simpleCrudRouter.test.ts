@@ -1,16 +1,16 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
+import {router} from "../Router";
 
-import app from '../App';
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('GET api/v1/heroes', () => {
+describe('Simple CRUD Route Test', () => {
 
   it('responds with JSON array', () => {
-    return chai.request(app).get('/api/v1/heroes')
+    return chai.request(router).get('/api/v1/heroes')
         .then(res => {
           expect(res.status).to.equal(200);
           expect(res).to.be.json;
@@ -20,7 +20,7 @@ describe('GET api/v1/heroes', () => {
   });
 
   it('should include Wolverine', () => {
-    return chai.request(app).get('/api/v1/heroes')
+    return chai.request(router).get('/api/v1/heroes')
         .then(res => {
           let Wolverine = res.body.find(hero => hero.name === 'Wolverine');
           expect(Wolverine).to.exist;
@@ -39,7 +39,7 @@ describe('GET api/v1/heroes', () => {
   });
 
   it('should return Luke Cage', () => {
-    return chai.request(app).get('/api/v1/heroes/1')
+    return chai.request(router).get('/api/v1/heroes/1')
         .then(res => {
           expect(res.body.hero.name).to.equal('Luke Cage');
         });

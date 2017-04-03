@@ -2,22 +2,22 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
-import app from './App';
+import {router} from './Router';
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('baseRoute', () => {
+describe('Router Test', () => {
 
   it('should be json', () => {
-    return chai.request(app).get('/')
+    return chai.request(router).get('/')
         .then(res => {
           expect(res.type).to.eql('application/json');
         });
   });
 
   it('should have a message prop', () => {
-    return chai.request(app).get('/')
+    return chai.request(router).get('/')
         .then(res => {
           expect(res.body.message).to.eql('Hello World!');
         });

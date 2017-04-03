@@ -1,12 +1,11 @@
 import * as http from 'http';
 import * as debug from 'debug';
 
-import App from './App';
+import {router} from './api/Router';
 import {Connect} from "./db/connect";
 import {AppConfig} from "./AppConfig";
 
 debug('ts-express:server');
-
 
 export const appConfig = new AppConfig();
 appConfig.setAppConfig('local');
@@ -16,9 +15,9 @@ export const database = new Connect();
 database.connectToDatabase();
 
 const port = normalizePort(process.env.PORT || 3000);
-App.set('port', port);
+router.set('port', port);
 
-const server = http.createServer(App);
+const server = http.createServer(router);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

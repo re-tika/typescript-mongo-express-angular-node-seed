@@ -2,14 +2,13 @@ import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
-import HeroRouter from './api/HeroRouter';
+import {simpleCrudRouter} from './endpoints/SimpleCrudRouter';
 import session = require("express-session");
-import {appConfig} from "./index";
-const RedisStore = require('connect-redis')(session)
+const RedisStore = require('connect-redis')(session);
 import * as passport from 'passport';
 
 // Creates and configures an ExpressJS web server.
-class App {
+class Router {
 
   // ref to Express instance
   public express: express.Application;
@@ -54,9 +53,9 @@ class App {
       });
     });
     this.express.use('/', router);
-    this.express.use('/api/v1/heroes', HeroRouter);
+    this.express.use('/api/v1/heroes', simpleCrudRouter);
   }
 
 }
 
-export default new App().express;
+export const router = new Router().express;
