@@ -3,8 +3,10 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import HeroRouter from './api/HeroRouter';
-//import session = require("express-session");
-//const RedisStore = require('connect-redis')(session)
+import session = require("express-session");
+import {appConfig} from "./index";
+const RedisStore = require('connect-redis')(session)
+import * as passport from 'passport';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -24,14 +26,19 @@ class App {
     this.express.use(logger('dev'));
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: false }));
-    /*this.express.use(session({
+
+    /* TODO: find problematic part, test
+    this.express.use(session({
       store: new RedisStore({
-        url: config.redisStore.url
+        url: appConfig.appConfig.redis.url
       }),
-      secret: config.redisStore.secret,
+      secret: appConfig.appConfig.redis.secret,
       resave: false,
       saveUninitialized: false
-    }))*/
+    }));
+    this.express.use(passport.initialize());
+    this.express.use(passport.session());
+    */
   }
 
   // Configure API endpoints.

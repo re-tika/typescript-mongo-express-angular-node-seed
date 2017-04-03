@@ -11,10 +11,6 @@ debug('ts-express:server');
 export const appConfig = new AppConfig();
 appConfig.setAppConfig('local');
 
-
-console.log('appConfig', appConfig, appConfig.appConfig);
-
-
 //connect to mongodb
 export const database = new Connect();
 database.connectToDatabase();

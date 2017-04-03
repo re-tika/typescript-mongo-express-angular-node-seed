@@ -1,5 +1,5 @@
 import * as mongo from 'mongodb'
-import {AppProperties} from "../../../models/app-properties.model";
+import {AppProperties} from "ts-mean-models/app-properties.model";
 import {appConfig} from "../index";
 
 export class Connect {

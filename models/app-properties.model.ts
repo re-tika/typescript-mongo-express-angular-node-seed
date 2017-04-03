@@ -5,5 +5,9 @@ export interface AppProperties {
     port: number;
     dbuser: string;
     dbpassword: string;
+  },
+  redis: {
+    url: string;
+    secret: string;
   }
 }
