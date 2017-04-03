@@ -17,7 +17,8 @@
     "express-session": "^1.15.2",
     "mongodb": "^2.2.25",
     "morgan": "^1.7.0",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "ts-mean-models": "0.0.0"
   },
   "devDependencies": {
     "@types/connect-redis": "0.0.5",

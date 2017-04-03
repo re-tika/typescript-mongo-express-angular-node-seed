@@ -1,5 +1,4 @@
-import {AppProperties} from "../../models/app-properties.model";
-
+import {AppProperties} from "app-properties.model";
 
 export class AppConfig {
 
