@@ -1,8 +1,8 @@
-import {database} from "./connect";
 import * as mongo from 'mongodb'
+import {database} from "../index";
 
 export function crudRead(id:string, collectionName: string, cb:(err, item?) => void) {
-  database.collection(collectionName, (err, collection) => {
+  database.database.collection(collectionName, (err, collection) => {
     if (err) return cb(err);
     collection.findOne({"_id": new mongo.ObjectID(id)}, (err, result) => {
       if (err) return cb(err);
@@ -14,7 +14,7 @@ export function crudRead(id:string, collectionName: string, cb:(err, item?) => v
 
 export function crudCreate(item: Object, collectionName: string, cb:(err, item?) => void) {
 
-  database.collection(collectionName, (err, collection) => {
+  database.database.collection(collectionName, (err, collection) => {
     if (err) return cb(err);
     collection.insertOne(item, (err, result) => {
       if (err) return cb(err);
@@ -25,7 +25,7 @@ export function crudCreate(item: Object, collectionName: string, cb:(err, item?)
 }
 
 export function crudUpdate(item, collectionName: string, cb:(err, item?) => void) {
-  database.collection(collectionName, (err, collection) => {
+  database.database.collection(collectionName, (err, collection) => {
     if (err) return cb(err);
 
     collection.updateOne({"_id": new mongo.ObjectID(item._id)}, item, (err, result) => {
@@ -36,7 +36,7 @@ export function crudUpdate(item, collectionName: string, cb:(err, item?) => void
 }
 
 export function crudDelete(id: string, collectionName: string, cb:(err, item?) => void) {
-  database.collection(collectionName, (err, collection) => {
+  database.database.collection(collectionName, (err, collection) => {
     if (err) return cb(err);
 
     collection.deleteOne({"_id": new mongo.ObjectID(id)}, (err, result) => {

@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
-import {connectToDatabase} from "./connect";
 import {crudRead, crudCreate, crudUpdate, crudDelete} from "./crud";
+import {Connect} from "./Connect";
 
 const expect = chai.expect;
 
@@ -60,7 +60,6 @@ describe('CRUD', () => {
       })
     };
 
-
     const doUpdate = (item) => {
       item.text = item.text + " world!";
       crudUpdate(item, 'items', (err, result) => {
@@ -72,7 +71,7 @@ describe('CRUD', () => {
       })
     };
 
-    connectToDatabase('local', start);
+    new Connect().connectToDatabase(start);
 
   });
 

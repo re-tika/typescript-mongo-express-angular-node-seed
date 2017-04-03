@@ -1,33 +1,47 @@
 import * as mongo from 'mongodb'
 import {AppProperties} from "../../../models/app-properties.model";
+import {appConfig} from "../index";
 
-// Retrieve
-const MongoClient = mongo.MongoClient;
+export class Connect {
+
+  constructor() {
+    this._mongoClient = mongo.MongoClient;
+  }
+
+  private _database;
+  private _mongoClient;
+
+  private mongoUri = (appParams: AppProperties) => {
+    const params = appParams.db;
+    return `mongodb://${params.dbuser}:${params.dbpassword}@${params.host}:${params.port}/${params.dbname}`
+  };
 
 
-//pre: only accepts passwords without 'weird (semicolon?)' characters...
-const mongoUri = (appParams: AppProperties) => {
-  const params = appParams.db;
-  return `mongodb://${params.dbuser}:${params.dbpassword}@${params.host}:${params.port}/${params.dbname}`
-};
+  public get database() {
+    return this._database;
+  }
 
-export let database;
+  public connectToDatabase (callback?: (database) => any) {
 
-export const connectToDatabase = (propertiesName: string, callback?) => {
+    // Connect to the db
+    this._mongoClient.connect(this.mongoUri(appConfig.appConfig), (err, db) => {
+      if(!err) {
+        this._database = db;
+        if (callback) {
+          callback(db);
+        }
+      } else {
+        console.log('Error on connecting to MongoDB', err)
+      }
+    });
 
-  const props: AppProperties = require(`../../properties/${propertiesName}.properties.json`);
+  };
 
-  // Connect to the db
-  MongoClient.connect(mongoUri(props), function(err, db) {
-    if(!err) {
-      database = db;
-      callback(db);
-    } else {
-      console.log('Error on connecting to MongoDB', err)
-    }
-  });
 
-};
+}
+
+
+
 
 /*
 import {Note} from "../../models/notes.model";

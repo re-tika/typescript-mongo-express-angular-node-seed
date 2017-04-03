@@ -1,12 +1,13 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
-import {connectToDatabase} from "./connect";
+import {Connect} from "./Connect";
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('DB Layer', () => {
+
+describe('Connect Test', () => {
 
   const item = {
     text: 'Hello World'
@@ -23,7 +24,7 @@ describe('DB Layer', () => {
       });
     };
 
-    connectToDatabase('local', cb);
+    new Connect().connectToDatabase(cb);
 
   });
 

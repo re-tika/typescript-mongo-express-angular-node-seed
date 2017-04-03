@@ -5,15 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec --compilers ts:ts-node/register '**/*.test.ts'",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "server": "node dist/index.js"
   },
   "author": "Daniel Niederberger <bersling@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/connect-redis": "0.0.5",
+    "@types/express-session": "0.0.32",
+    "@types/monk": "^1.0.5",
+    "@types/passport": "^0.3.3",
     "body-parser": "^1.15.2",
+    "connect-redis": "^3.2.0",
     "express": "^4.14.0",
+    "express-session": "^1.15.2",
     "mongodb": "^2.2.25",
-    "morgan": "^1.7.0"
+    "mongoskin": "^2.1.0",
+    "monk": "^4.0.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
