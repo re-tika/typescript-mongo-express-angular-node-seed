@@ -1,10 +1,8 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
-import chaiHttp = require('chai-http');
 import {connectToDatabase} from "./connect";
-import {crudRead, crudCreate, crudUpdate} from "./crud";
+import {crudRead, crudCreate, crudUpdate, crudDelete} from "./crud";
 
-chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe('CRUD', () => {
@@ -37,16 +35,16 @@ describe('CRUD', () => {
 
         doDelete(item._id);
 
-
-
       });
     };
 
     const doDelete = (id: string) => {
-      //crudDelete()
+      crudDelete(id, 'items', (err, result) => {
+        expect(err).to.equal(null);
+        expect(result.deletedCount).to.equal(1);
+        done();
+      })
 
-      //TODO: Crud delete!
-      done();
     };
 
 
