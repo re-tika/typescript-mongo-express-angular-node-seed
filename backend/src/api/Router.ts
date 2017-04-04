@@ -4,8 +4,8 @@ import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import {simpleCrudRouter} from './endpoints/SimpleCrudRouter';
 import session = require("express-session");
-const RedisStore = require('connect-redis')(session);
-import * as passport from 'passport';
+//const RedisStore = require('connect-redis')(session);
+//import * as passport from 'passport';
 
 // Creates and configures an ExpressJS web server.
 class Router {
@@ -15,9 +15,6 @@ class Router {
 
   //Run configuration methods on the Express instance.
   constructor() {
-
-    console.log('why u no construct');
-
     this.express = express();
     this.middleware();
     this.routes();

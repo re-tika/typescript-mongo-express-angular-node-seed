@@ -8,7 +8,7 @@ import {AppConfig} from "./AppConfig";
 debug('ts-express:server');
 
 export const appConfig = new AppConfig();
-appConfig.setAppConfig('local');
+//appConfig.setAppConfig('local');
 
 //connect to mongodb
 export const database = new Connect();
@@ -53,3 +53,4 @@ function onListening(): void {
   let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
+
