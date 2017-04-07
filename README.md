@@ -3,7 +3,8 @@ The interest in the MEAN Stack (Mongo-Express-Angular-Node) seems to have peaked
 according to Google Trends.
 While I can imagine a multitude of reasons for this
 (from Anguar
-now being Angular4 , to mean.io / meanjs.org being
+now being Angular4 , to mean
+/ meanjs.org being
 quite out of date or the rise of other frameworks / libs like ReactJS or MeteorJS)
 , it's still a viable full-stack-js solution.
 For me, however, with one big change:
@@ -24,7 +25,7 @@ And this is what's resulted from it.
 First, get the code using
 
 ```
-git clone https://github.com/bersling/typescript-mongo-express-angular.io-node-seed.git project-name
+git clone https://github.com/bersling/typescript-mongo-express-angular-node-seed.git project-name
 cd project-name
 git submodule init
 git submodule update
