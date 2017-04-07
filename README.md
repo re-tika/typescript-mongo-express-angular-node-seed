@@ -14,7 +14,7 @@ To install & run the backend run
 cd backend && npm install
 npm start
 ```
-or
+or alternatively to `npm start`, for running the tests:
 ```
 npm test
 ```
