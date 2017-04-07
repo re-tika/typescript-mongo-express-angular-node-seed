@@ -3,7 +3,10 @@
 First, get the code using
 
 ```
-git clone https://github.com/bersling/typescript-mongo-express-angular.io-node-seed.git
+git clone https://github.com/bersling/typescript-mongo-express-angular.io-node-seed.git project-name
+cd project-name
+git submodule init
+git submodule update
 ```
 
 Then, since backend and frontend are separate projects,
