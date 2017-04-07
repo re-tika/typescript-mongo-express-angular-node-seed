@@ -9,9 +9,10 @@ git submodule init
 git submodule update
 ```
 
-Then, since backend and frontend are separate projects,
+Then, since backend and frontend are well separated through a REST-API,
 they are also installed separately.
 
+## Backend Setup
 To install & run the backend run
 ```
 cd backend && npm install
@@ -22,19 +23,25 @@ or alternatively to `npm start`, for running the tests:
 npm test
 ```
 
-The frontend is suggested to do with [Angular Cli](https://github.com/angular/angular-cli), therefore no code
-needs to be commited here. Like this you're also at Angular's newest (Angular 2, Angular 4, Angular 5, ...). In order to setup a new frontend project
-with the angular-cli, first install the cli:
-```
-npm install -g @angular/cli
-```
+## Frontend Setup
+The frontend is suggested to be setup with [Angular Cli](https://github.com/angular/angular-cli).
+Like this you're also at Angular's newest version (Angular 2, Angular 4, Angular 5, ...).
+Refer to the Angular-Cli docs for more information.
 
-and then create a new project
-```
-ng new <project-name>-frontend
-```
+In case you're not into Angular, you could also just use any other
+frontend architecture, since the backend is just a REST-API to consume.
+For example you could go with ReactJS & Redux, or no framework at all!
 
-However, just refer to the Angular Cli Docs.
+## Models / Shared Code
+One advantage of using NodeJs in the backend, is that front- and backend
+can share pieces of code. One example where it's pretty obvious that
+sharing makes sense are the data-models. Since backend and frontend should
+run independently (e.g. if you just want to send someone the backend code),
+this shared code is a separate npm library. Like this, the backend / frontend
+just pull the models from `npm` and can run totally independently, while still
+writing the code only once. Of course, having to `npm version patch` and
+`npm publish` the models all the time in order to use them in the backend / frontend
+is a bit annoying, that's the tradeoff of modular code.
 
 
 # Development
@@ -54,9 +61,6 @@ or run the tests using
 npm test
 ```
 
-The tests can be run with `npm test`.
-They are located in the same folders as the actual code lives!
-This makes the components more self-contained.
 
 For further details, consult the backend repository's readme.
 
