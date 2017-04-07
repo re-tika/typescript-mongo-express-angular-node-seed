@@ -1,0 +1,6 @@
+[submodule "typescript-mongo-express-node-seed"]
+	path = typescript-mongo-express-node-seed
+	url = https://github.com/bersling/typescript-mongo-express-node-seed
+[submodule "backend"]
+	path = backend
+	url = https://github.com/bersling/typescript-mongo-express-node-seed
