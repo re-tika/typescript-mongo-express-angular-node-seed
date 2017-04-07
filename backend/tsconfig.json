@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["es6"],
-    "types": ["reflect-metadata"],
     "module": "commonjs",
-    "outDir": "dist",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "outDir": "dist"
   },
   "include": [
     "src/**/*.ts"
