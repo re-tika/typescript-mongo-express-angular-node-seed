@@ -44,7 +44,7 @@ or alternatively to `npm start`, for running the tests:
 npm test
 ```
 
-The backend has a good test coverage for the boilerplate code far using mocha and chai.
+The backend has good test coverage for the boilerplate code using mocha and chai.
 The tests are also written in typescript.
 
 ## Frontend Setup
