@@ -1,7 +1,7 @@
 {
-  "name": "notely",
+  "name": "ts-mean",
   "version": "0.0.0",
-  "description": "A note-taking app with OCR",
+  "description": "Boilerplate for a TS-MEAN App",
   "main": "index.js",
   "dependencies": {
     "ts-node": "^1.6.1"
@@ -12,17 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bersling/notely.git"
+    "url": "git+https://github.com/bersling/typescript-mongo-express-angular.io-node-seed"
   },
   "keywords": [
-    "OCR",
-    "notes",
-    "notely"
+    "Boilerplate",
+    "MEAN",
+    "NodeJs",
+    "ExpressJs",
+    "Angular",
+    "MongoDB"
   ],
   "author": "Daniel Niederberger <bersling@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bersling/notely/issues"
+    "url": "https://github.com/bersling/typescript-mongo-express-angular.io-node-seed/issues"
   },
-  "homepage": "https://github.com/bersling/notely#readme"
+  "homepage": "https://github.com/bersling/typescript-mongo-express-angular.io-node-seed#readme"
 }
