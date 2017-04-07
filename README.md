@@ -51,7 +51,7 @@ Those subprojects are the `backend`, `frontend` and
 `models`.
 
 ## Backend-Development
-The backend is a separate project and is located at `backend`.
+The backend is a separate git submodule and is located at `backend`.
 To get going, install as described above, then start a server with
 ```
 npm start
