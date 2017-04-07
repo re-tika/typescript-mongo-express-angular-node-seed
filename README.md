@@ -9,25 +9,9 @@ git clone https://github.com/bersling/typescript-mongo-express-angular.io-node-s
 Then, since backend and frontend are separate projects,
 they are also installed separately.
 
-To install & run the backend, first you need a running mongodb.
-You can get one for example at mlabs.com.
-Then, add a folder `properties` with a `local.properties.json` and a `test.properties.json` to the backend with the following content:
-
+To install & run the backend run
 ```
-{
-  "db": {
-    "host": "<ds145220.mlab.com or similar>",
-    "dbuser": "<your chosen username>",
-    "port": <45220 or similar>,
-    "dbpassword": "<your chosen password>",
-    "dbname": "<your chosen dbname>"
-  }
-}
-```
-
-Then you're ready to run
-```
-cd notely-be && npm install
+cd backend && npm install
 npm start
 ```
 or
