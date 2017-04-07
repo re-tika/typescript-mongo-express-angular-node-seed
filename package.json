@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bersling/typescript-mongo-express-angular.io-node-seed"
+    "url": "git+https://github.com/bersling/typescript-mongo-express-angular-node-seed"
   },
   "keywords": [
     "Boilerplate",
@@ -26,7 +26,7 @@
   "author": "Daniel Niederberger <bersling@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bersling/typescript-mongo-express-angular.io-node-seed/issues"
+    "url": "https://github.com/bersling/typescript-mongo-express-angular-node-seed/issues"
   },
-  "homepage": "https://github.com/bersling/typescript-mongo-express-angular.io-node-seed#readme"
+  "homepage": "https://github.com/bersling/typescript-mongo-express-angular-node-seed#readme"
 }
