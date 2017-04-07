@@ -3,7 +3,7 @@
 First, get the code using
 
 ```
-git clone https://github.com/bersling/<name-of-this-repo>.git
+git clone https://github.com/bersling/typescript-mongo-express-angular.io-node-seed.git
 ```
 
 Then, since backend and frontend are separate projects,
