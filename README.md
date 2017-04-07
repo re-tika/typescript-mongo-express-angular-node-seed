@@ -65,7 +65,7 @@ this shared code is a separate npm library. Like this, the backend / frontend
 just pull the models from `npm` and can run totally independently, while still
 writing the code only once. Of course, having to `npm version patch` and
 `npm publish` the models all the time in order to use them in the backend / frontend
-is a bit annoying, that's the tradeoff of modular code.
+is a bit annoying, but that's the tradeoff of modular code.
 
 
 # Development
