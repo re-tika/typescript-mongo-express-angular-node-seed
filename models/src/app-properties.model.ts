@@ -5,6 +5,7 @@ export interface AppProperties {
     port: number;
     dbuser: string;
     dbpassword: string;
+    testsMayDropDb: boolean;
   },
   redis: {
     url: string;
