@@ -1,10 +1,13 @@
 export interface User {
-  id: string;
+  id?: {
+    key: string;
+    version: string;
+  };
   email: string;
   password: {
     hash: string;
-    algo: HashingAlgo;
+    algorithm: HashingAlgorithm;
   }
 }
 
-type HashingAlgo = 'bcrypt'
+type HashingAlgorithm = 'bcrypt'
