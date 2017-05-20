@@ -57,23 +57,11 @@ In case you're not into Angular, you could also just use any other
 frontend architecture, since the backend is just a REST-API to consume.
 For example you could go with ReactJS & Redux, or no framework at all!
 
-## Models / Shared Code
-One advantage of using NodeJs in the backend, is that front- and backend
-can share pieces of code. One example where it's pretty obvious that
-sharing makes sense are the data-models. Since backend and frontend should
-run independently (e.g. if you just want to send someone the backend code),
-this shared code is a separate npm library. Like this, the backend / frontend
-just pull the models from `npm` and can run totally independently, while still
-writing the code only once. Of course, having to `npm version patch` and
-`npm publish` the models all the time in order to use them in the backend / frontend
-is a bit annoying, but that's the tradeoff of modular code.
-
 
 # Development
 
 The project is split into subprojects that can be developed independently.
-Those subprojects are the `backend`, `frontend` and
-`models`.
+Those subprojects are the `backend` and `frontend`.
 
 ## Backend-Development
 The backend is a separate git submodule and is located at `backend`.
@@ -92,12 +80,8 @@ For further details, consult the backend repository's readme.
 ## Frontend-Development
 See [Angular Cli](https://github.com/angular/angular-cli).
 
+## A Full Tutorial on the Typescript-MEAN Stack
 
-## Models
-Since both the backend and the frontend are using the same data-structure,
-the data-models are stored and maintained independently.
+I've documented the steps of the journey here:
+[www.tsmean.com](http://www.tsmean.com).
 
-In order to write new models, add a new `my-model.model.ts` file and
-export it in `index.d.ts`. Once you're done, you can `npm version patch`
-and then `npm publish`. Like this the models are retrievable by `npm`
-in the backend- and frontend-projects, in order for them to be truly separated into their own git repos.
