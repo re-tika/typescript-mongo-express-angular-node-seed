@@ -7,7 +7,7 @@ import {Resource} from "./resource";
 export class ResourceService {
 
   private resourcesUrl(resourceName: ResourceName) {
-    return 'http://localhost:8080/api/v1/' + resourceName
+    return '/api/v1/' + resourceName
   };  // URL to web api
 
   constructor(private http: Http) { }
