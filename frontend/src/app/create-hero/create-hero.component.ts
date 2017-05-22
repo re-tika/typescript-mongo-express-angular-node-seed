@@ -19,7 +19,9 @@ export class CreateHeroComponent implements OnInit {
 
   public createHero() {
     this.heroService.createHero(this.newHero).subscribe(createdHero => {
-      this.newHeroCreated.emit({value: createdHero})
+      this.newHeroCreated.emit({
+        value: createdHero
+      });
     });
   }
 

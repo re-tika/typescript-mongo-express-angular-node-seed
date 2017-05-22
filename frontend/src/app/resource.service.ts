@@ -60,8 +60,9 @@ export class ResourceService {
     } else {
       return this.http.get(this.resourcesUrl(resourceName) + resourceId + '/')
           .map(resp => {
-            this.storeResourceAsObservable(resp.json().data, resourceName);
-            return this.resourceStore[resourceName][resourceId]
+            const resource = resp.json().data;
+            this.storeResourceAsObservable(resource, resourceName);
+            return resource
           })
           .catch(this.handleError);
     }
@@ -69,12 +70,13 @@ export class ResourceService {
   }
 
   
-  createResource(resource: Resource, resourceName: ResourceName): Observable<Resource> {
+  createResource(newResource: Resource, resourceName: ResourceName): Observable<Resource> {
 
-    return this.http.post(this.resourcesUrl(resourceName), resource)
+    return this.http.post(this.resourcesUrl(resourceName), newResource)
         .map(resp => {
-          this.storeResourceAsObservable(resp.json().data, resourceName);
-          return this.resourceStore[resourceName][resource.uid]
+          const createdResource = resp.json().data;
+          this.storeResourceAsObservable(createdResource, resourceName);
+          return createdResource;
         })
         .catch(this.handleError);
   }
@@ -90,7 +92,7 @@ export class ResourceService {
         .catch(this.handleError);
   }
 
-  private storeResourceAsObservable (resource: Resource, resourceName: ResourceName) {
+  private storeResourceAsObservable (resource: Resource, resourceName: ResourceName): void {
     if (resource.uid) {
 
       const subject = new Subject();
@@ -98,6 +100,7 @@ export class ResourceService {
       this.resourceStore[resourceName][resource.uid] = subject;
 
       setTimeout(() => {
+        console.log('juust a regular resource:', resource);
         subject.next(resource)
       }, 0);
 
