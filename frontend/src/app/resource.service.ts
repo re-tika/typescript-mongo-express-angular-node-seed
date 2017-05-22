@@ -3,6 +3,10 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Resource} from "./resource";
 
+import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import 'rxjs/add/observable/of';
+
 @Injectable()
 export class ResourceService {
 
@@ -10,9 +14,39 @@ export class ResourceService {
     return '/api/v1/' + resourceName + '/'
   };  // URL to web api
 
+  // A store for resources
+  private resourceStore = {
+
+    //contains data of the following format:
+    //[resourceName][resourceId]
+
+    /* METHODS OF THE RESOURCE STORE */
+    insertResourceInStore: (resource: Resource, resourceName: ResourceName) => {
+      this.resourceStore[resourceName] = this.resourceStore[resourceName] || {};
+    },
+
+    updateResourceInStore: (resource: Resource, resourceName: ResourceName) => {
+
+    },
+
+    deleteResourceInStore: (resource: Resource, resourceName: ResourceName) => {
+
+    },
+
+    getResourceInStore: (resource: Resource, resourceName: ResourceName) => {
+
+    },
+
+  };
+
+
+
   constructor(private http: Http) { }
   getResources(resourceName: ResourceName): Promise<Resource[]> {
-    console.log('gettin');
+
+    const resourcesObservable: Observable<Resource> = this.http.get(this.resourcesUrl(resourceName));
+
+
     return this.http.get(this.resourcesUrl(resourceName))
         .toPromise()
         .then(response => response.json().data as Resource[])
