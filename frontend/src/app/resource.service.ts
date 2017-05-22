@@ -85,7 +85,6 @@ export class ResourceService {
     return this.http.delete(this.resourcesUrl(resourceName) + resourceId + '/')
         .toPromise()
         .then(response => {
-          //TODO: how to 'delete an observable'?
           (<Observable<Resource>>this.resourceStore[resourceName][resourceId])
           return response.json().data as Object
         })
@@ -100,7 +99,6 @@ export class ResourceService {
       this.resourceStore[resourceName][resource.uid] = subject;
 
       setTimeout(() => {
-        console.log('juust a regular resource:', resource);
         subject.next(resource)
       }, 0);
 

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
 import {HeroService} from "../hero.service";
 
@@ -18,8 +18,14 @@ export class DeleteHeroComponent implements OnInit {
   hero: Hero;
 
   public deleteHero() {
-    //TODO: dont delete in child... not da owner... or its okay to delete here, but dont refresh here...?
-    this.heroService.deleteHero(this.hero.uid);
+    this.heroService.deleteHero(this.hero.uid).then(resp => {
+      this.deleteHeroEvent.emit({
+        value: this.hero.uid
+      })
+    });
   }
+
+  @Output()
+  deleteHeroEvent = new EventEmitter();
 
 }

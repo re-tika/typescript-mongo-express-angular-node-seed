@@ -18,4 +18,12 @@ export class DisplayHeroListComponent implements OnInit {
   @Input()
   heroes: Hero[];
 
+
+  @Output()
+  deleteHeroEvent = new EventEmitter();
+
+  doDelete(evt) {
+    this.deleteHeroEvent.emit(evt);
+  }
+
 }

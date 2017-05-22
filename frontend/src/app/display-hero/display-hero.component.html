@@ -1,5 +1,5 @@
 <div class="display-hero">
   <div>{{hero.name}}</div>
   <div>{{hero.uid}}</div>
-  <app-delete-hero [hero]="hero"></app-delete-hero>
+  <app-delete-hero [hero]="hero" (deleteHeroEvent)="doDelete($event)"></app-delete-hero>
 </div>
