@@ -3,6 +3,7 @@ import {Hero} from "../hero";
 import {HeroSettings} from "../hero-settings";
 import {EmittedEvent} from "../emitted-event";
 import {UtilsService} from "../utils.service";
+import {HeroService} from "../hero.service";
 
 @Component({
   selector: 'app-display-hero',
@@ -12,7 +13,8 @@ import {UtilsService} from "../utils.service";
 export class DisplayHeroComponent implements OnChanges, OnInit {
 
   constructor(
-      private utilsService: UtilsService
+      private utilsService: UtilsService,
+      private heroService: HeroService
   ) { }
 
   @Input()
@@ -39,8 +41,18 @@ export class DisplayHeroComponent implements OnChanges, OnInit {
     isBeingEdited: false
   };
 
-  updateSettings(evt: EmittedEvent) {
-    this.utilsService.mergeObjectTwoIntoObjectOne(this.heroSettings, evt.value);
+
+  toggleEditable() {
+    this.heroSettings.isBeingEdited = !this.heroSettings.isBeingEdited;
+  }
+
+  updateHero() {
+    console.log(this.heroCopy, 'cpy')
+    this.heroService.updateHero(this.heroCopy).subscribe(hero => {
+      console.log(hero, 'hr');
+      this.hero = hero;
+      this.toggleEditable();
+    });
   }
 
 }

@@ -85,7 +85,7 @@ export class ResourceService {
     return this.http.put(this.resourcesUrl(resourceName), resource)
         .map(resp => {
           this.resourceStore[resourceName][resource.uid].next(resource);
-          return this.resourceStore[resourceName][resource.uid];
+          return resource;
         })
         .catch(this.handleError);
   }
