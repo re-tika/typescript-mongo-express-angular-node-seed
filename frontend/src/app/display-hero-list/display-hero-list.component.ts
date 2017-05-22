@@ -11,7 +11,7 @@ export class DisplayHeroListComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
-  private heroes: Hero[];
+  private heroes: Hero[] = [];
 
   ngOnInit() {
     this.heroService.getHeros().then(resp => {
@@ -23,6 +23,10 @@ export class DisplayHeroListComponent implements OnInit {
     }, errorResp => {
       console.log('something went wrong:', errorResp);
     })
+  }
+
+  appendToList(evt) {
+    console.log(evt);
   }
 
 

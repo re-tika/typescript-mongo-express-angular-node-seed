@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
 import {HeroService} from "../hero.service";
 
@@ -18,9 +18,12 @@ export class CreateHeroComponent implements OnInit {
   public newHero: Hero;
 
   public createHero() {
-    this.heroService.createHero(this.newHero).subscribe(hero => {
-      console.log(hero);
-    })
+    this.heroService.createHero(this.newHero).subscribe(createdHero => {
+      this.newHeroCreated.emit({value: createdHero})
+    });
   }
+
+  @Output()
+  newHeroCreated = new EventEmitter();
 
 }

@@ -94,6 +94,7 @@ export class ResourceService {
     if (resource.uid) {
 
       const subject = new Subject();
+      this.resourceStore[resourceName] = this.resourceStore[resourceName] || {};
       this.resourceStore[resourceName][resource.uid] = subject;
 
       setTimeout(() => {

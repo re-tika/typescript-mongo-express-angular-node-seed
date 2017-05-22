@@ -6,7 +6,9 @@ import {Observable} from "rxjs";
 @Injectable()
 export class HeroService {
 
-  constructor(private resourceService: ResourceService) { }
+  constructor(
+      private resourceService: ResourceService
+  ) { }
 
   private get resourceName (): ResourceName {
     return 'heroes'
