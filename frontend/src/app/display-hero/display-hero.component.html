@@ -1,6 +1,6 @@
 <div class="display-hero">
   <div *ngIf="!heroSettings.isBeingEdited">{{hero.name}}</div>
-  <input *ngIf="heroSettings.isBeingEdited" [(ngModel)]="hero.name"/>
+  <input *ngIf="heroSettings.isBeingEdited" [(ngModel)]="heroCopy.name"/>
   <div class="hero-id">{{hero.uid}}</div>
   <app-update-hero [hero]="hero" [heroSettings]="heroSettings" (settingsChangeEvent)="updateSettings($event)"></app-update-hero>
   <app-delete-hero [hero]="hero" (deleteHeroEvent)="doDelete($event)"></app-delete-hero>

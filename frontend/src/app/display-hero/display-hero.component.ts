@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Hero} from "../hero";
 import {HeroSettings} from "../hero-settings";
 import {EmittedEvent} from "../emitted-event";
@@ -9,7 +9,7 @@ import {UtilsService} from "../utils.service";
   templateUrl: './display-hero.component.html',
   styleUrls: ['./display-hero.component.css']
 })
-export class DisplayHeroComponent implements OnInit {
+export class DisplayHeroComponent implements OnChanges, OnInit {
 
   constructor(
       private utilsService: UtilsService
@@ -18,7 +18,14 @@ export class DisplayHeroComponent implements OnInit {
   @Input()
   hero: Hero;
 
+  heroCopy: Hero;
+
   ngOnInit() {
+    this.heroCopy = this.utilsService.deepCopyData(this.hero);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.heroCopy = this.utilsService.deepCopyData(changes.hero.currentValue);
   }
 
   @Output()

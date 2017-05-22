@@ -69,7 +69,7 @@ export class ResourceService {
 
   }
 
-  
+
   createResource(newResource: Resource, resourceName: ResourceName): Observable<Resource> {
 
     return this.http.post(this.resourcesUrl(resourceName), newResource)
@@ -82,13 +82,10 @@ export class ResourceService {
   }
 
   updateResource(resource: Resource, resourceName: ResourceName): Observable<Resource> {
-
-    console.log(2, resource);
-
     return this.http.put(this.resourcesUrl(resourceName), resource)
         .map(resp => {
-          const updatedResource = resp.json().data;
-          return updatedResource;
+          this.resourceStore[resourceName][resource.uid].next(resource);
+          return this.resourceStore[resourceName][resource.uid];
         })
         .catch(this.handleError);
   }
@@ -118,7 +115,7 @@ export class ResourceService {
       console.error('Expected a uid field the resource');
     }
   }
-  
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

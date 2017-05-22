@@ -27,8 +27,6 @@ export class HeroService {
   }
 
   updateHero(hero: Hero): Observable<Hero> {
-    console.log(1, hero);
-
     return this.resourceService.updateResource(hero, this.resourceName);
   }
 

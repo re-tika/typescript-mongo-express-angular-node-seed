@@ -39,7 +39,6 @@ export class UpdateHeroComponent implements OnInit {
   }
 
   updateHero() {
-    console.log(0, this.hero);
     this.heroService.updateHero(this.hero).subscribe(hero => {
       //update resource...
 
