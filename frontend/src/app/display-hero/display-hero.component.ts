@@ -1,5 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
+import {HeroSettings} from "../hero-settings";
+import {EmittedEvent} from "../emitted-event";
+import {UtilsService} from "../utils.service";
 
 @Component({
   selector: 'app-display-hero',
@@ -8,7 +11,9 @@ import {Hero} from "../hero";
 })
 export class DisplayHeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+      private utilsService: UtilsService
+  ) { }
 
   @Input()
   hero: Hero;
@@ -21,6 +26,14 @@ export class DisplayHeroComponent implements OnInit {
 
   doDelete(evt) {
     this.deleteHeroEvent.emit(evt);
+  }
+
+  heroSettings: HeroSettings = {
+    isBeingEdited: false
+  };
+
+  updateSettings(evt: EmittedEvent) {
+    this.utilsService.mergeObjectTwoIntoObjectOne(this.heroSettings, evt.value);
   }
 
 }

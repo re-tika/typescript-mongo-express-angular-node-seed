@@ -22,8 +22,14 @@ export class HeroService {
     return this.resourceService.createResource(hero, this.resourceName);
   }
 
-  deleteHero(resourceId: string): Promise<Object> {
-    return this.resourceService.deleteResource(resourceId, this.resourceName);
+  deleteHero(heroId: string): Promise<Object> {
+    return this.resourceService.deleteResource(heroId, this.resourceName);
+  }
+
+  updateHero(hero: Hero): Observable<Hero> {
+    console.log(1, hero);
+
+    return this.resourceService.updateResource(hero, this.resourceName);
   }
 
   private handleError(error: any): Promise<any> {

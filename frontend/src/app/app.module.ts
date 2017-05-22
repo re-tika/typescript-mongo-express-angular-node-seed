@@ -10,6 +10,8 @@ import { DisplayHeroComponent } from './display-hero/display-hero.component';
 import { DisplayHeroListComponent } from './display-hero-list/display-hero-list.component';
 import {ResourceService} from "./resource.service";
 import {HeroService} from "./hero.service";
+import { UpdateHeroComponent } from './update-hero/update-hero.component';
+import {UtilsService} from "./utils.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {HeroService} from "./hero.service";
     CreateHeroComponent,
     DeleteHeroComponent,
     DisplayHeroComponent,
-    DisplayHeroListComponent
+    DisplayHeroListComponent,
+    UpdateHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {HeroService} from "./hero.service";
   ],
   providers: [
       ResourceService,
-      HeroService
+      HeroService,
+      UtilsService
   ],
   bootstrap: [AppComponent]
 })

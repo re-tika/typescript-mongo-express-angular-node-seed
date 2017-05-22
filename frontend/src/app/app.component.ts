@@ -21,7 +21,16 @@ export class AppComponent {
     this.heroService.getHeros().then(resp => {
       resp.forEach(heroObservable => {
         heroObservable.subscribe(hero => {
-          this.heroes.push(hero);
+          const heroesInListThatMatchFetchedHero = this.heroes.filter(heroInList => heroInList.uid === hero.uid);
+          if (heroesInListThatMatchFetchedHero.length === 0) {
+            //insert the hero if he's not found yet
+            this.heroes.push(hero);
+          } else if (heroesInListThatMatchFetchedHero.length === 1) {
+            //update the hero if he's already in the list
+            heroesInListThatMatchFetchedHero[0] = hero;
+          } else {
+            console.error('Found same hero in list more than once');
+          }
         })
       });
     }, errorResp => {

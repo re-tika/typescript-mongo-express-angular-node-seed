@@ -1,0 +1,4 @@
+<div>
+  <button *ngIf="heroSettings.isBeingEdited" (click)="updateHero()">Update Hero</button>
+  <button *ngIf="!heroSettings.isBeingEdited" (click)="makeHeroEditable()">Edit Hero</button>
+</div>

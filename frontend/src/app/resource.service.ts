@@ -81,6 +81,18 @@ export class ResourceService {
         .catch(this.handleError);
   }
 
+  updateResource(resource: Resource, resourceName: ResourceName): Observable<Resource> {
+
+    console.log(2, resource);
+
+    return this.http.put(this.resourcesUrl(resourceName), resource)
+        .map(resp => {
+          const updatedResource = resp.json().data;
+          return updatedResource;
+        })
+        .catch(this.handleError);
+  }
+
   deleteResource(resourceId: string, resourceName: ResourceName): Promise<Object> {
     return this.http.delete(this.resourcesUrl(resourceName) + resourceId + '/')
         .toPromise()
