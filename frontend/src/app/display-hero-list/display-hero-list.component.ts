@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Hero} from "../hero";
+import {HeroService} from "../hero.service";
 
 @Component({
   selector: 'app-display-hero-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayHeroListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
+
+  private heroes: Hero[];
 
   ngOnInit() {
+    this.heroService.getHeros().then(resp => {
+      this.heroes = resp;
+    }, errorResp => {
+      console.log('something went wrong:', errorResp);
+    })
   }
+
+
 
 }

@@ -1,3 +1,3 @@
 export interface Resource {
-  uid: string;
+  uid?: string;
 }

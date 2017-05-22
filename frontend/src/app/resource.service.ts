@@ -7,11 +7,12 @@ import {Resource} from "./resource";
 export class ResourceService {
 
   private resourcesUrl(resourceName: ResourceName) {
-    return '/api/v1/' + resourceName
+    return '/api/v1/' + resourceName + '/'
   };  // URL to web api
 
   constructor(private http: Http) { }
   getResources(resourceName: ResourceName): Promise<Resource[]> {
+    console.log('gettin');
     return this.http.get(this.resourcesUrl(resourceName))
         .toPromise()
         .then(response => response.json().data as Resource[])
@@ -25,8 +26,8 @@ export class ResourceService {
         .catch(this.handleError);
   }
 
-  deleteResource(resource: Resource, resourceName: ResourceName): Promise<Object> {
-    return this.http.post(this.resourcesUrl(resourceName), resource)
+  deleteResource(resourceId: string, resourceName: ResourceName): Promise<Object> {
+    return this.http.delete(this.resourcesUrl(resourceName) + resourceId + '/')
         .toPromise()
         .then(response => response.json().data as Object)
         .catch(this.handleError);
@@ -39,4 +40,4 @@ export class ResourceService {
 
 }
 
-type ResourceName = 'heroes'
+export type ResourceName = 'heroes'
