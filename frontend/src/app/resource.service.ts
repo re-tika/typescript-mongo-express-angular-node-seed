@@ -84,7 +84,9 @@ export class ResourceService {
   updateResource(resource: Resource, resourceName: ResourceName): Observable<Resource> {
     return this.http.put(this.resourcesUrl(resourceName), resource)
         .map(resp => {
-          this.resourceStore[resourceName][resource.uid].next(resource);
+          setTimeout(() => {
+            this.resourceStore[resourceName][resource.uid].next(resource);
+          }, 0);
           return resource;
         })
         .catch(this.handleError);
