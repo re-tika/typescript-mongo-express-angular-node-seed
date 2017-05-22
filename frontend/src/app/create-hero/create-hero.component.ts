@@ -18,9 +18,9 @@ export class CreateHeroComponent implements OnInit {
   public newHero: Hero;
 
   public createHero() {
-    this.heroService.createHero(this.newHero).then(resp => {
-      console.log(resp);
-    });
+    this.heroService.createHero(this.newHero).subscribe(hero => {
+      console.log(hero);
+    })
   }
 
 }

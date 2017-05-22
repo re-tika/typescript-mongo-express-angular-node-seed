@@ -15,7 +15,11 @@ export class DisplayHeroListComponent implements OnInit {
 
   ngOnInit() {
     this.heroService.getHeros().then(resp => {
-      this.heroes = resp;
+      resp.forEach(heroObservable => {
+        heroObservable.subscribe(hero => {
+          this.heroes.push(hero);
+        })
+      });
     }, errorResp => {
       console.log('something went wrong:', errorResp);
     })
