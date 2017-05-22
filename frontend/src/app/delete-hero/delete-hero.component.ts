@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Hero} from "../hero";
+import {HeroService} from "../hero.service";
 
 @Component({
   selector: 'app-delete-hero',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteHeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+  }
+
+  @Input()
+  hero: Hero;
+
+  public deleteHero() {
+    //TODO: dont delete in child... not da owner... or its okay to delete here, but dont refresh here...?
+    this.heroService.deleteHero(this.hero.uid);
   }
 
 }
