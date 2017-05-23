@@ -9,6 +9,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {toPromise} from "rxjs/operator/toPromise";
+import {UtilsService} from './utils.service'
 
 
 @Injectable()
@@ -26,7 +27,10 @@ export class ResourceService {
 
   };
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private utils: UtilsService
+  ) { }
 
   getResources(resourceName: ResourceName): Promise<Observable<Resource>[]> {
 
@@ -84,10 +88,14 @@ export class ResourceService {
   updateResource(resource: Resource, resourceName: ResourceName): Observable<Resource> {
     return this.http.put(this.resourcesUrl(resourceName), resource)
         .map(resp => {
+
+          //TODO: make the backend actually return something
+
+          const resourceCopy = this.utils.deepCopyData(resource);
           setTimeout(() => {
-            this.resourceStore[resourceName][resource.uid].next(resource);
+            this.resourceStore[resourceName][resourceCopy.uid].next(resourceCopy);
           }, 0);
-          return resource;
+          return resourceCopy;
         })
         .catch(this.handleError);
   }

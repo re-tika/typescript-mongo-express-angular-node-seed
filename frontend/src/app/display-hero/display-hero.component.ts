@@ -23,11 +23,11 @@ export class DisplayHeroComponent implements OnChanges, OnInit {
   heroCopy: Hero;
 
   ngOnInit() {
-    this.heroCopy = this.utilsService.deepCopyData(this.hero);
+    this.resetCopy();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.heroCopy = this.utilsService.deepCopyData(changes.hero.currentValue);
+      this.resetCopy();
   }
 
   @Output()
@@ -47,12 +47,14 @@ export class DisplayHeroComponent implements OnChanges, OnInit {
   }
 
   updateHero() {
-    console.log(this.heroCopy, 'cpy')
     this.heroService.updateHero(this.heroCopy).subscribe(hero => {
-      console.log(hero, 'hr');
       this.hero = hero;
       this.toggleEditable();
     });
+  }
+
+  resetCopy() {
+      this.heroCopy = this.utilsService.deepCopyData(this.hero);
   }
 
 }

@@ -10,7 +10,7 @@
     <button *ngIf="heroSettings.isBeingEdited" (click)="updateHero()">Update Hero</button>
     <button (click)="toggleEditable()">
       <span *ngIf="!heroSettings.isBeingEdited">Edit Hero</span>
-      <span *ngIf="heroSettings.isBeingEdited">Cancel Edit</span>
+      <span *ngIf="heroSettings.isBeingEdited" (click)="resetCopy()">Cancel Edit</span>
     </button>
   </div>
   <app-delete-hero [hero]="hero" (deleteHeroEvent)="doDelete($event)"></app-delete-hero>
