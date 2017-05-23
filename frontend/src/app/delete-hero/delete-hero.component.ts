@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
 import {HeroService} from "../hero.service";
+import {BroadcastService} from "../broadcast.service";
 
 @Component({
   selector: 'app-delete-hero',
@@ -9,7 +10,10 @@ import {HeroService} from "../hero.service";
 })
 export class DeleteHeroComponent implements OnInit {
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private broadcast: BroadcastService
+  ) { }
 
   ngOnInit() {
   }
@@ -19,13 +23,11 @@ export class DeleteHeroComponent implements OnInit {
 
   public deleteHero() {
     this.heroService.deleteHero(this.hero.uid).then(resp => {
-      this.deleteHeroEvent.emit({
-        value: this.hero.uid
-      })
+      this.broadcast.heroList.deleteHero.emit({
+        heroId: this.hero.uid
+      });
     });
   }
 
-  @Output()
-  deleteHeroEvent = new EventEmitter();
 
 }

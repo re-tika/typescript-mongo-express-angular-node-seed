@@ -11,6 +11,7 @@ import { DisplayHeroListComponent } from './display-hero-list/display-hero-list.
 import {ResourceService} from "./resource.service";
 import {HeroService} from "./hero.service";
 import {UtilsService} from "./utils.service";
+import {BroadcastService} from "./broadcast.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {UtilsService} from "./utils.service";
   providers: [
       ResourceService,
       HeroService,
-      UtilsService
+      UtilsService,
+      BroadcastService
   ],
   bootstrap: [AppComponent]
 })

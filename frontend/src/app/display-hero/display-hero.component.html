@@ -13,5 +13,5 @@
       <span *ngIf="heroSettings.isBeingEdited" (click)="resetCopy()">Cancel Edit</span>
     </button>
   </div>
-  <app-delete-hero [hero]="hero" (deleteHeroEvent)="doDelete($event)"></app-delete-hero>
+  <app-delete-hero [hero]="hero"></app-delete-hero>
 </div>

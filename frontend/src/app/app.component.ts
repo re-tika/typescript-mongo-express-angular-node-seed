@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HeroService} from "./hero.service";
 import {Hero} from "./hero";
 import {EmittedEvent} from "./emitted-event";
+import {BroadcastService} from "./broadcast.service";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,23 @@ import {EmittedEvent} from "./emitted-event";
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private heroService: HeroService) {
+  constructor(
+      private heroService: HeroService,
+      private broadcast: BroadcastService
+  ) {
 
   }
 
   private heroes: Hero[] = [];
 
   ngOnInit() {
+
+    //set up listeners
+    this.broadcast.heroList.deleteHero.subscribe(evt => {
+      this.heroes = this.heroes.filter(hero => hero.uid !== evt.heroId);
+    });
+
+    //get heroes
     this.heroService.getHeros().then(resp => {
       resp.forEach(heroObservable => {
         heroObservable.subscribe(hero => {
@@ -42,8 +53,5 @@ export class AppComponent {
     this.heroes.push(evt.value);
   }
 
-  public doDelete(evt: EmittedEvent) {
-    this.heroes = this.heroes.filter(hero => hero.uid !== evt.value);
-  }
 
 }

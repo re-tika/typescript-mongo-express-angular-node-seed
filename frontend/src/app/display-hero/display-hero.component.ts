@@ -30,12 +30,6 @@ export class DisplayHeroComponent implements OnChanges, OnInit {
       this.resetCopy();
   }
 
-  @Output()
-  deleteHeroEvent = new EventEmitter();
-
-  doDelete(evt) {
-    this.deleteHeroEvent.emit(evt);
-  }
 
   heroSettings: HeroSettings = {
     isBeingEdited: false
