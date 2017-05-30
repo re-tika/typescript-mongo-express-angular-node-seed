@@ -12,6 +12,9 @@ import {ResourceService} from "./resource.service";
 import {HeroService} from "./hero.service";
 import {UtilsService} from "./utils.service";
 import {BroadcastService} from "./broadcast.service";
+import { MainComponent } from './main/main.component';
+import { TopnavComponent } from './topnav/topnav.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {BroadcastService} from "./broadcast.service";
     CreateHeroComponent,
     DeleteHeroComponent,
     DisplayHeroComponent,
-    DisplayHeroListComponent
+    DisplayHeroListComponent,
+    MainComponent,
+    TopnavComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

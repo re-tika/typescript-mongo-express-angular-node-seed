@@ -2,13 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TsmeanFe</title>
+  <title>My Project</title>
   <base href="/">
-
+  
+  <!-- Styles required for the loading screen -->
+  <link rel="stylesheet"
+        href="/assets/css/initial.css">
+  
+  <!-- Required to look ok on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Required to look the same in all browsers -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <!-- Loading screen, will be replaced with contents of <app-root> once it's loaded -->
+    <div class="fullscreen-center">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+  </app-root>
 </body>
 </html>

@@ -29,6 +29,7 @@ export class AppComponent {
     });
 
     //get heroes
+    /*
     this.heroService.getHeros().then(resp => {
       resp.forEach(heroObservable => {
         heroObservable.subscribe(hero => {
@@ -47,6 +48,7 @@ export class AppComponent {
     }, errorResp => {
       console.error('something went wrong when getting heroes:', errorResp);
     })
+   */
   }
 
   public appendToList(evt: EmittedEvent) {
