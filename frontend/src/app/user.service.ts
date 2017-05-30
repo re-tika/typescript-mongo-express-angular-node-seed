@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import {User} from "./user";
+import {HttpResponse} from "selenium-webdriver/http";
+import {environment} from "../environments/environment";
+import {UtilsService} from "./utils.service";
 
 @Injectable()
 export class UserService {
 
   constructor(
-      private http: Http
+      private http: Http,
+      private utils: UtilsService
   ) { }
 
   private get loginApi(): string {
-    return 'api/v1/login'
+    return this.utils.urlJoin(environment.api, 'login')
   }
 
   private get userApi(): string {
-    return 'api/v1/users'
+    return this.utils.urlJoin(environment.api, 'users')
   }
-
 
   login(username: string, password: string) {
     this.http.get(this.loginApi).toPromise().then(resp => {
@@ -24,13 +27,11 @@ export class UserService {
     });
   }
 
-  createUser(user: User, password: string) {
-    this.http.post(this.userApi, {
+  createUser(user: User, password: string): Promise<any> {
+    return this.http.post(this.userApi, {
       user: user,
       password: password
-    }).toPromise().then(resp => {
-      console.log(resp);
-    })
+    }).toPromise();
   }
 
 

@@ -15,6 +15,12 @@ import {BroadcastService} from "./broadcast.service";
 import { MainComponent } from './main/main.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MdInputModule, MdCardModule, MdButtonModule} from '@angular/material';
+import 'hammerjs';
+import {UserService} from "./user.service";
+//for angular material + mobile
+
 
 @NgModule({
   declarations: [
@@ -29,14 +35,19 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MdInputModule,
+    MdButtonModule,
+    MdCardModule
   ],
   providers: [
       ResourceService,
       HeroService,
       UtilsService,
-      BroadcastService
+      BroadcastService,
+      UserService
   ],
   bootstrap: [AppComponent]
 })

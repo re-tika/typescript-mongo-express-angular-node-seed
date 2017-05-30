@@ -3,6 +3,7 @@ import {HeroService} from "./hero.service";
 import {Hero} from "./hero";
 import {EmittedEvent} from "./emitted-event";
 import {BroadcastService} from "./broadcast.service";
+import {environment} from "environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,7 @@ export class AppComponent {
   constructor(
       private heroService: HeroService,
       private broadcast: BroadcastService
-  ) {
-
-  }
+  ) {}
 
   private heroes: Hero[] = [];
 

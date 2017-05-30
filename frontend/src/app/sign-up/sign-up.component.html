@@ -1,5 +1,26 @@
 <div>
-  <input type="text">
-  <input type="text">
-  <input type="text">
+  <md-card class="bottom-padded-card">
+    
+    <h1>
+      Sign Up
+    </h1>
+    
+    <md-input-container class="app-full-width">
+      <input mdInput placeholder="Your Name">
+    </md-input-container>
+    <md-input-container class="app-full-width">
+      <input mdInput [(ngModel)]="newUser.email" placeholder="Email">
+    </md-input-container>
+    <md-input-container class="app-full-width">
+      <input mdInput [(ngModel)]="password" type="password" placeholder="Password">
+    </md-input-container>
+    
+    <div class="clearfix">
+      <div class="float-right">
+        <button (click)="doSignUp()" md-raised-button>Sign Up</button>
+      </div>
+      <!--  <md-raised-button>Hello</md-raised-button>-->
+    </div>
+    
+  </md-card>
 </div>

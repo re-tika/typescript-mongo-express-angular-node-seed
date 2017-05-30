@@ -10,13 +10,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {toPromise} from "rxjs/operator/toPromise";
 import {UtilsService} from './utils.service'
+import {environment} from "../environments/environment";
+import {resource} from "selenium-webdriver/http";
 
 
 @Injectable()
 export class ResourceService {
 
   private resourcesUrl(resourceName: ResourceName) {
-    return '/api/v1/' + resourceName + '/'
+    return this.utils.urlJoin(environment.api, resourceName)
   };  // URL to web api
 
   // A store for resources
@@ -62,7 +64,7 @@ export class ResourceService {
     if (this.resourceStore[resourceName][resourceId]) {
       return this.resourceStore[resourceName][resourceId];
     } else {
-      return this.http.get(this.resourcesUrl(resourceName) + resourceId + '/')
+      return this.http.get(this.utils.urlJoin(this.resourcesUrl(resourceName), resourceId))
           .map(resp => {
             const resource = resp.json().data;
             this.storeResourceAsObservable(resource, resourceName);
@@ -101,7 +103,7 @@ export class ResourceService {
   }
 
   deleteResource(resourceId: string, resourceName: ResourceName): Promise<Object> {
-    return this.http.delete(this.resourcesUrl(resourceName) + resourceId + '/')
+    return this.http.delete(this.utils.urlJoin(this.resourcesUrl(resourceName), resourceId))
         .toPromise()
         .then(response => {
           (<Observable<Resource>>this.resourceStore[resourceName][resourceId])
