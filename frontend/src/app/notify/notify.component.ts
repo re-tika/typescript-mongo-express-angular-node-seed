@@ -22,10 +22,6 @@ export class NotifyComponent implements OnInit, OnDestroy {
       this.notification = notification;
 
       this.hidden = false;
-      setTimeout(() => {
-        this.hidden = true;
-      },500);
-
 
       let somethinElseHappened: boolean = false;
       const timer = Observable.timer(notification.timer);
@@ -36,14 +32,20 @@ export class NotifyComponent implements OnInit, OnDestroy {
             somethinElseHappened = true;
           });
 
-
       setTimeout(() => {
         if (!somethinElseHappened) {
-          this.notification = undefined;
+          this.removeNotification();
         }
       }, notification.timer);
 
     })
+  }
+
+  removeNotification() {
+    this.hidden = true;
+    setTimeout(() => {
+      this.notification = undefined;
+    }, 300)
   }
 
   private onDestroyStarted: Subject<void> = new Subject<void>();
