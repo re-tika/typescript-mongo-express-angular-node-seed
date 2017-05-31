@@ -1,41 +1,27 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from "rxjs";
-import {AppNotification} from "./notification";
+import {AppNotification, NotifyOptions} from "./notification";
 
 @Injectable()
 export class NotifyService {
 
-  constructor() {
-    const doNotify = () => {
-      setTimeout(() => {
-        if (this.counter < 20) {
-          this.counter++;
-          if (this.counter % 2 == 0) {
-            this.success('cool');
-          } else {
-            this.error('beans');
-          }
-          doNotify();
-        }
-      }, 500);
-    };
-    doNotify();
-    console.log(this.notifications);
-  }
+  constructor() {}
 
-  counter = 0;
-
-  success(message) {
+  success(message, options?: NotifyOptions) {
     this._notifications.next({
       type: 'success',
-      message: message
+      message: message,
+      color: options && options.color || '#3C763D',
+      background: options && options.background || '#DFF0D8',
     });
   }
 
-  error(message) {
+  error(message, options?: NotifyOptions) {
     this._notifications.next({
       type: 'error',
-      message: message
+      message: message,
+      color: options && options.color || '#A94442',
+      background: options && options.background || '#F2DEDE',
     })
   }
 
