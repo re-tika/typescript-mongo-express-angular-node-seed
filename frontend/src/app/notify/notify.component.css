@@ -1,0 +1,15 @@
+.notification-wrapper {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+
+.notification > md-card {
+    background: #207786;
+}

@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit {
   private password = "";
 
   ngOnInit() {
+
   }
 
   doSignUp() {

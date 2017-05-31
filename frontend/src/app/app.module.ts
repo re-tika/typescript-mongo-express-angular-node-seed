@@ -19,6 +19,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MdInputModule, MdCardModule, MdButtonModule} from '@angular/material';
 import 'hammerjs';
 import {UserService} from "./user.service";
+import {NotifyService} from "./notify.service";
+import { NotifyComponent } from './notify/notify.component';
 //for angular material + mobile
 
 
@@ -31,7 +33,8 @@ import {UserService} from "./user.service";
     DisplayHeroListComponent,
     MainComponent,
     TopnavComponent,
-    SignUpComponent
+    SignUpComponent,
+    NotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import {UserService} from "./user.service";
       HeroService,
       UtilsService,
       BroadcastService,
-      UserService
+      UserService,
+      NotifyService
   ],
   bootstrap: [AppComponent]
 })
