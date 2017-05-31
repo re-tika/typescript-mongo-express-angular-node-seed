@@ -19,7 +19,6 @@ including the unit tests. So I set out to create this boilerplate.
 And this is what's resulted from it.
 
 
-
 # Installation
 
 First, get the code using
@@ -49,14 +48,30 @@ The backend has good test coverage for the boilerplate code using mocha and chai
 The tests are also written in typescript.
 
 ## Frontend Setup
-The frontend is suggested to be setup with [Angular Cli](https://github.com/angular/angular-cli).
-Like this you're also at Angular's newest version (Angular 2, Angular 4, Angular 5, ...).
-Refer to the Angular-Cli docs for more information.
+To install the frontend
 
-In case you're not into Angular, you could also just use any other
-frontend architecture, since the backend is just a REST-API to consume.
-For example you could go with ReactJS & Redux, or no framework at all!
+```
+cd frontend && cd frontend
+```
 
+and run it with
+
+```
+ng serve
+```
+
+This will run the frontend on  http://localhost:4200. Since it's backend-less
+some things won't work with this setup.
+
+If you want to run it together with the backend run:
+```
+ng build
+```
+and then just start the backend with
+```
+cd ../backend && npm start
+```
+and open http://localhost:3000.
 
 # Development
 
@@ -83,5 +98,5 @@ See [Angular Cli](https://github.com/angular/angular-cli).
 ## A Full Tutorial on the Typescript-MEAN Stack
 
 I've documented the steps of the journey here:
-[www.tsmean.com](http://www.tsmean.com).
-
+[www.tsmean.com](http://www.tsmean.com). This documenation might
+at some points be somewhat behind the actual repository.
