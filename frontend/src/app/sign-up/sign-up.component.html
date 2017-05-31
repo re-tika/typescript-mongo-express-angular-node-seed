@@ -9,10 +9,10 @@
       <input mdInput placeholder="Your Name">
     </md-input-container>
     <md-input-container class="app-full-width">
-      <input mdInput [(ngModel)]="newUser.email" placeholder="Email">
+      <input mdInput [(ngModel)]="newUser.email" autocomplete="false" placeholder="Email">
     </md-input-container>
     <md-input-container class="app-full-width">
-      <input mdInput [(ngModel)]="password" type="password" placeholder="Password">
+      <input mdInput [(ngModel)]="password" autocomplete="new-password" type="password" placeholder="Password">
     </md-input-container>
     
     <div class="clearfix">

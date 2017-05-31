@@ -14,15 +14,24 @@ export class NotifyComponent implements OnInit, OnDestroy {
       private notifyService: NotifyService
   ) {}
 
+  public hidden;
+
   ngOnInit() {
+
     this.notifyService.notifications.takeUntil(this.onDestroyStarted).subscribe(notification => {
       this.notification = notification;
 
+      this.hidden = false;
+      setTimeout(() => {
+        this.hidden = true;
+      },500);
+
+
       let somethinElseHappened: boolean = false;
-      const oneSecond = Observable.timer(1000);
+      const timer = Observable.timer(notification.timer);
       const innerSubscription = this.notifyService
           .notifications
-          .takeUntil(oneSecond)
+          .takeUntil(timer)
           .subscribe(newNotification => {
             somethinElseHappened = true;
           });
@@ -32,7 +41,8 @@ export class NotifyComponent implements OnInit, OnDestroy {
         if (!somethinElseHappened) {
           this.notification = undefined;
         }
-      }, 1000);
+      }, notification.timer);
+
     })
   }
 

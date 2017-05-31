@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {AppNotification, NotifyOptions} from "./notification";
 
+
 @Injectable()
 export class NotifyService {
 
@@ -13,6 +14,9 @@ export class NotifyService {
       message: message,
       color: options && options.color || '#3C763D',
       background: options && options.background || '#DFF0D8',
+      timer: options && options.timer || 1500,
+      transition: '1.5s',
+      opacity: '1'
     });
   }
 
@@ -22,6 +26,9 @@ export class NotifyService {
       message: message,
       color: options && options.color || '#A94442',
       background: options && options.background || '#F2DEDE',
+      timer: options && options.timer || 3000,
+      transition: '3s',
+      opacity: '1'
     })
   }
 

@@ -1,8 +1,8 @@
-export interface AppNotification {
+export interface AppNotification extends NotifyOptions {
   type: NotificationType;
   message: string;
-  color: string;
-  background: string;
+  transition: string; //css
+  opacity: string; //css
 }
 
 export interface NotifyOptions {

@@ -1,6 +1,10 @@
 <div class="notification-wrapper">
   <div class="notification" *ngIf="notification">
-    <md-card [style.background]="notification.background" [style.color]="notification.color" >
+    <md-card class="step"
+             [class.hidden]="hidden"
+             
+             [style.background]="notification.background"
+             [style.color]="notification.color" >
       {{notification.message}}
     </md-card>
   </div>
