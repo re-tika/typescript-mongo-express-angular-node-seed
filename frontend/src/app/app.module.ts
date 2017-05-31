@@ -16,8 +16,9 @@ import { MainComponent } from './main/main.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MdInputModule, MdCardModule, MdButtonModule} from '@angular/material';
-import 'hammerjs'; //for angular material + mobile
+import {MdInputModule, MdCardModule, MdButtonModule, MdToolbarModule, MdMenuModule,
+MdIconModule} from '@angular/material';
+import 'hammerjs';
 import {UserService} from "./user.service";
 import {NotifyService} from "./notify.service";
 import { NotifyComponent } from './notify/notify.component';
@@ -26,6 +27,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { TopnavMenuComponent } from './topnav-menu/topnav-menu.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { SpacerComponent } from './spacer/spacer.component';
+import { LoginComponent } from './login/login.component';
+import { HeroWrapperComponent } from './hero-wrapper/hero-wrapper.component';
 
 
 @NgModule({
@@ -42,7 +48,12 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     PageNotFoundComponent,
     HomeComponent,
     LandingComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    TopnavMenuComponent,
+    JumbotronComponent,
+    SpacerComponent,
+    LoginComponent,
+    HeroWrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +63,10 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     AppRoutingModule,
     MdInputModule,
     MdButtonModule,
-    MdCardModule
+    MdCardModule,
+      MdToolbarModule,
+      MdMenuModule,
+    MdIconModule
   ],
   providers: [
       ResourceService,
