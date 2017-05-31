@@ -1,4 +1,3 @@
-
 # Foreword
 The interest in the MEAN Stack (Mongo-Express-Angular-Node) seems to have peaked in May 2016
 according to Google Trends.
