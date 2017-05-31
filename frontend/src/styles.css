@@ -11,10 +11,6 @@
     margin: 0 auto;
 }
 
-.bottom-padded-card {
-    padding-bottom: 10px;
-}
-
-.clearfix {
-
+.app-page {
+    padding-top: 50px;
 }

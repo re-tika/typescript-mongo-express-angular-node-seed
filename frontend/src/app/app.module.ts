@@ -17,11 +17,15 @@ import { TopnavComponent } from './topnav/topnav.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MdInputModule, MdCardModule, MdButtonModule} from '@angular/material';
-import 'hammerjs';
+import 'hammerjs'; //for angular material + mobile
 import {UserService} from "./user.service";
 import {NotifyService} from "./notify.service";
 import { NotifyComponent } from './notify/notify.component';
-//for angular material + mobile
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 @NgModule({
@@ -34,13 +38,18 @@ import { NotifyComponent } from './notify/notify.component';
     MainComponent,
     TopnavComponent,
     SignUpComponent,
-    NotifyComponent
+    NotifyComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    LandingComponent,
+    SignupPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     MdInputModule,
     MdButtonModule,
     MdCardModule
