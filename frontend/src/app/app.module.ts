@@ -12,7 +12,6 @@ import {ResourceService} from "./resource.service";
 import {HeroService} from "./hero.service";
 import {UtilsService} from "./utils.service";
 import {BroadcastService} from "./broadcast.service";
-import { MainComponent } from './main/main.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -27,7 +26,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { TopnavMenuComponent } from './topnav-menu/topnav-menu.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { SpacerComponent } from './spacer/spacer.component';
 import { LoginComponent } from './login/login.component';
@@ -41,7 +39,6 @@ import { HeroWrapperComponent } from './hero-wrapper/hero-wrapper.component';
     DeleteHeroComponent,
     DisplayHeroComponent,
     DisplayHeroListComponent,
-    MainComponent,
     TopnavComponent,
     SignUpComponent,
     NotifyComponent,
@@ -49,7 +46,6 @@ import { HeroWrapperComponent } from './hero-wrapper/hero-wrapper.component';
     HomeComponent,
     LandingComponent,
     SignupPageComponent,
-    TopnavMenuComponent,
     JumbotronComponent,
     SpacerComponent,
     LoginComponent,

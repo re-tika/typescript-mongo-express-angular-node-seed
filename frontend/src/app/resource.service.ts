@@ -8,11 +8,8 @@ import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {toPromise} from "rxjs/operator/toPromise";
 import {UtilsService} from './utils.service'
 import {environment} from "../environments/environment";
-import {resource} from "selenium-webdriver/http";
-
 
 @Injectable()
 export class ResourceService {

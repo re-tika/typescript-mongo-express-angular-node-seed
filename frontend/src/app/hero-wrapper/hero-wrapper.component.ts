@@ -26,7 +26,6 @@ export class HeroWrapperComponent implements OnInit {
     });
 
     //get heroes
-
     this.heroService.getHeros().then(resp => {
       resp.forEach(heroObservable => {
         heroObservable.subscribe(hero => {

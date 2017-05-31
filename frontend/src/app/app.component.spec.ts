@@ -2,15 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import {TopnavComponent} from "./topnav/topnav.component";
-import {MainComponent} from "./main/main.component";
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        TopnavComponent,
-        MainComponent
+        TopnavComponent
       ],
     }).compileComponents();
   }));

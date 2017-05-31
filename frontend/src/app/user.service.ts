@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import {User} from "./user";
-import {HttpResponse} from "selenium-webdriver/http";
 import {environment} from "../environments/environment";
 import {UtilsService} from "./utils.service";
 
