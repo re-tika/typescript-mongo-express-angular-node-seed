@@ -23,7 +23,6 @@ import {NotifyService} from "./notify.service";
 import { NotifyComponent } from './notify/notify.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
@@ -43,7 +42,6 @@ import { HeroWrapperComponent } from './hero-wrapper/hero-wrapper.component';
     SignUpComponent,
     NotifyComponent,
     PageNotFoundComponent,
-    HomeComponent,
     LandingComponent,
     SignupPageComponent,
     JumbotronComponent,
@@ -60,8 +58,8 @@ import { HeroWrapperComponent } from './hero-wrapper/hero-wrapper.component';
     MdInputModule,
     MdButtonModule,
     MdCardModule,
-      MdToolbarModule,
-      MdMenuModule,
+    MdToolbarModule,
+    MdMenuModule,
     MdIconModule
   ],
   providers: [
