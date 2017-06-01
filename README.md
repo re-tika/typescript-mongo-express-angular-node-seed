@@ -41,7 +41,7 @@ https://github.com/bersling/typescript-mongo-express-node-seed
 Check out the frontend instructions:
 https://github.com/bersling/typescript-angular-seed
 
-## How everything can be setup from scratch
+## How everything can be set up from scratch
 I've documented the steps of the journey here:
 [www.tsmean.com](http://www.tsmean.com). This documenation might
 at some points be somewhat behind the actual repository.
