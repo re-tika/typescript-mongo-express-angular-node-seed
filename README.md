@@ -34,11 +34,11 @@ Then, since backend and frontend are well separated through a REST-API,
 they are also installed separately.
 
 ## Backend
-Checkout the backend instructrions:
+Check out the backend instructrions:
 https://github.com/bersling/typescript-mongo-express-node-seed
 
 ## Frontend
-Chout the frontend instructions:
+Check out the frontend instructions:
 https://github.com/bersling/typescript-angular-seed
 
 ## How everything can be setup from scratch
