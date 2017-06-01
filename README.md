@@ -51,7 +51,7 @@ The tests are also written in typescript.
 To install the frontend
 
 ```
-cd frontend && cd frontend
+cd frontend && npm install
 ```
 
 and run it with
