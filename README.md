@@ -33,70 +33,15 @@ git submodule update
 Then, since backend and frontend are well separated through a REST-API,
 they are also installed separately.
 
-## Backend Setup
-To install & run the backend run
-```
-cd backend && npm install
-npm start
-```
-or alternatively to `npm start`, for running the tests:
-```
-npm test
-```
+## Backend
+Checkout the backend instructrions:
+https://github.com/bersling/typescript-mongo-express-node-seed
 
-The backend has good test coverage for the boilerplate code using mocha and chai.
-The tests are also written in typescript.
+## Frontend
+Chout the frontend instructions:
+https://github.com/bersling/typescript-angular-seed
 
-## Frontend Setup
-To install the frontend
-
-```
-cd frontend && npm install
-```
-
-and run it with
-
-```
-ng serve
-```
-
-This will run the frontend on  http://localhost:4200. Since it's backend-less
-some things won't work with this setup.
-
-If you want to run it together with the backend run:
-```
-ng build
-```
-and then just start the backend with
-```
-cd ../backend && npm start
-```
-and open http://localhost:3000.
-
-# Development
-
-The project is split into subprojects that can be developed independently.
-Those subprojects are the `backend` and `frontend`.
-
-## Backend-Development
-The backend is a separate git submodule and is located at `backend`.
-To get going, install as described above, then start a server with
-```
-npm start
-```
-or run the tests using
-```
-npm test
-```
-
-
-For further details, consult the backend repository's readme.
-
-## Frontend-Development
-See [Angular Cli](https://github.com/angular/angular-cli).
-
-## A Full Tutorial on the Typescript-MEAN Stack
-
+## How everything can be setup from scratch
 I've documented the steps of the journey here:
 [www.tsmean.com](http://www.tsmean.com). This documenation might
 at some points be somewhat behind the actual repository.
