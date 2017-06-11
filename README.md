@@ -45,7 +45,3 @@ https://github.com/bersling/typescript-angular-seed
 I've documented the steps of the journey here:
 [www.tsmean.com](http://www.tsmean.com). This documenation might
 at some points be somewhat behind the actual repository.
-
-## Screenshots
-
-![alt text](https://raw.githubusercontent.com/bersling/typescript-mongo-express-angular-node-seed/master/landing-screen.png)
