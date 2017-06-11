@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/bersling/typescript-mongo-express-angular-node-seed/master/landing-screen.png)
+
 # Foreword
 The interest in the MEAN Stack (Mongo-Express-Angular-Node) seems to have peaked in May 2016
 according to Google Trends.
