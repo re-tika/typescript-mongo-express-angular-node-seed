@@ -1,4 +1,4 @@
-![Screenshot](https://www.bersling.com/wp-content/uploads/2017/06/landing-screen.png)
+![Screenshot](./landing-screen.png)
 
 # Foreword
 The interest in the MEAN Stack (Mongo-Express-Angular-Node) seems to have peaked in May 2016
