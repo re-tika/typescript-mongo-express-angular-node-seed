@@ -1,4 +1,4 @@
-server=ubuntu@54.93.232.18
+server=ubuntu@52.59.71.133
 
 # remove the old zip file if present, locally and on server
 rm -f tsmean.zip
