@@ -1,3 +1,6 @@
+![Screenshot](./landing-screenshot.png)
+
+
 This project provides a starter package for
 a **100% Typescript** MEAN Stack. The project
 is well alive and actively maintained, just not on npm.
