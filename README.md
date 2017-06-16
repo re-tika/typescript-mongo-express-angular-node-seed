@@ -7,4 +7,11 @@ is well alive and actively maintained, just not on npm.
 
 https://github.com/bersling/typescript-mongo-express-angular-node-seed
 
+
+If you'd like to get a glimpse of what you'll get first,
+you can have a view at the live demo:
+
+http://demo.tsmean.com
+
+
 Have a nice day!
