@@ -2,7 +2,7 @@
 
 
 This project provides a starter package for
-a **100% Typescript** MEAN Stack. The project
+a **100% Typescript** MEAN (Mongo-Express-Angular2-Node) Stack. The project
 is well alive and actively maintained, just not on npm.
 
 
