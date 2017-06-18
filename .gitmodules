@@ -7,3 +7,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/bersling/typescript-angular-seed
+[submodule "db-module"]
+	path = backend/db-module
+	url = https://github.com/bersling/typescript-mongo-module
